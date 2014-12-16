@@ -459,7 +459,7 @@ mod tests {
     #[test]
     fn test_threads() {
         for _ in range(0u32, 100u32) {
-            spawn(proc() {
+            spawn(move || {
                 let _ = Atom::from_slice("a dynamic string");
                 let _ = Atom::from_slice("another string");
             });
